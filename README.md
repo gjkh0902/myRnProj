@@ -15,6 +15,7 @@ yarn install
 
 ```ios
 npm run ios/yarn ios
+```
 
 ```andriod
 npm run android/yarn android
