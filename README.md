@@ -17,5 +17,5 @@ yarn install
 npm run ios/yarn ios
 
 ```andriod
-npm run andriod/yarn andriod
+npm run android/yarn android
 ```
