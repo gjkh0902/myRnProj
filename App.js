@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './src/HomeScreen';
 import DetailsScreen from './src/DetailsScreen';
-import {Button} from 'react-native';
+import {TouchableOpacity, StyleSheet, View, Text} from 'react-native';
 
 // export default class App extends React.Component {
 //   render() {
@@ -24,7 +24,11 @@ const Stack = createStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerTitleAlign: 'center',
+      }}>
       <Stack.Screen
         name="Home"
         component={HomeScreen}
@@ -38,11 +42,11 @@ function MyStack() {
             fontWeight: 'bold',
           },
           headerRight: () => (
-            <Button
+            <TouchableOpacity
               onPress={() => alert('This is a button!')}
-              title="Info"
-              color="#fff"
-            />
+              style={styles.headerButton}>
+              <Text style={styles.titleText}>info</Text>
+            </TouchableOpacity>
           ),
         }}
       />
@@ -58,3 +62,14 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+//styles
+const styles = StyleSheet.create({
+  headerButton: {
+    alignItems: 'center',
+    padding: 10,
+  },
+  titleText: {
+    color: '#fff',
+  },
+});

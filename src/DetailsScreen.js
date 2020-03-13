@@ -1,22 +1,5 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
-
-// export default class DetailsScreen extends React.Component {
-//   static navigationOptions = {
-//     title: 'Details', //设置导航条
-//   };
-//   render() {
-//     return (
-//       <View style={{}}>
-//         <Text>Details Screen</Text>
-
-//         <Button
-//           title="Go to Home"
-//           onPress={() => navigation.navigate('Home')}></Button>
-//       </View>
-//     );
-//   }
-// }
+import {View, Text, StyleSheet} from 'react-native';
 
 function DetailsScreen({navigation}) {
   return (
@@ -27,12 +10,17 @@ function DetailsScreen({navigation}) {
         justifyContent: 'center',
         color: '#f00',
       }}>
-      <Text>Details Screen</Text>
-
-      <Button
-        title="Go to Home"
-        onPress={() => navigation.navigate('Home')}></Button>
+      <Text style={{fontSize: 20}}>Details Screen</Text>
+      <Text onPress={() => navigation.navigate('Home')} style={styles.navJump}>
+        Go to Home
+      </Text>
     </View>
   );
 }
 export default DetailsScreen;
+
+const styles = StyleSheet.create({
+  navJump: {
+    color: '#348738',
+  },
+});

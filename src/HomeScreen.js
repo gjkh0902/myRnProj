@@ -1,28 +1,5 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
-
-// export default class HomeScreen extends React.Component {
-//   static navigationOptions = {
-//     title: 'Home', //设置导航条
-//   };
-//   render() {
-//     return (
-//       <View
-//         style={{
-//           flex: 1,
-//           alignItems: 'center',
-//           justifyContent: 'center',
-//           color: '#f00',
-//         }}>
-//         <Text>Home Screen</Text>
-
-//         <Button
-//           title="Go to Detail"
-//           onPress={() => navigation.navigate('Details')}></Button>
-//       </View>
-//     );
-//   }
-// }
+import {View, Text, StyleSheet} from 'react-native';
 
 function HomeScreen({navigation}) {
   return (
@@ -33,12 +10,19 @@ function HomeScreen({navigation}) {
         justifyContent: 'center',
         color: '#f00',
       }}>
-      <Text>Home Screen</Text>
-
-      <Button
-        title="Go to Detail"
-        onPress={() => navigation.navigate('Details')}></Button>
+      <Text style={{fontSize: 20}}>Home Screen</Text>
+      <Text
+        onPress={() => navigation.navigate('Details')}
+        style={styles.navJump}>
+        Go to Detail
+      </Text>
     </View>
   );
 }
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+  navJump: {
+    color: '#348738',
+  },
+});
